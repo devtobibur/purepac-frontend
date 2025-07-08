@@ -17,7 +17,6 @@ export async function fetchData<T>(endpoint: string): Promise<T> {
 
   try {
     const response = await fetch(url);
-
     if (!response.ok) {
       let errorMessage;
       try {

@@ -39,7 +39,6 @@ export default function MobileLoginFormWithServerActions() {
 
   const handleSendOtp = async (e: React.FormEvent) => {
     e.preventDefault();
-
     if (phoneNumber.length !== 10 || !phoneNumber.startsWith("1")) {
       toast.error("Invalid phone number", {
         description:
@@ -47,22 +46,16 @@ export default function MobileLoginFormWithServerActions() {
       });
       return;
     }
-
     try {
       setIsLoading(true);
-
       const formattedNumber = `+880${phoneNumber}`;
-
       const response = await mobileLogin(formattedNumber);
-
       if ("otpExpiresAt" in response && response.otpExpiresAt) {
         setOtpExpiresAt(response.otpExpiresAt);
       }
-
       toast.info("OTP Sent", {
         description: `OTP Send to ${formattedNumber}`,
       });
-
       setShowOtpForm(true);
       setOtpExpired(false);
       setTimer(180); // Reset timer
@@ -81,7 +74,6 @@ export default function MobileLoginFormWithServerActions() {
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
-
     if (value && index < 5) {
       const nextInput = document.getElementById(`otp-${index + 1}`);
       if (nextInput) {

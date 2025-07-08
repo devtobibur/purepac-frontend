@@ -31,7 +31,7 @@ export function AddToCartButton({
     <Button
       size="sm"
       variant="outline"
-      className="font-semibold text-[10px] xs:text-xs sm:text-sm border-primary text-primary hover:bg-primary/10 rounded h-8 xs:h-7 sm:h-8 cursor-pointer"
+      className="font-semibold text-[10px] xs:text-xs sm:text-sm border border-gray-100 text-primary hover:bg-primary/10 rounded-none h-8 xs:h-7 sm:h-8 cursor-pointer"
       onClick={handleAddToCart}
       disabled={disabled || isLoading}
     >

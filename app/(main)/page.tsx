@@ -1,26 +1,15 @@
 import { HeadingPrimary } from "@/components/common/heading-primary";
-import { AnimatedCarousel } from "@/components/homepage/banner/hero/animated-carousel";
 import BrandList from "@/components/homepage/brands/brand-list";
-import CategoriesList from "@/components/homepage/Category/categories-list";
+import CategoriesSection from "@/components/homepage/section/category-section/CategoriesSection";
+import HeroSection from "@/components/homepage/section/hero-section/HeroSection";
 import ProductList from "@/components/products/product-list";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <AnimatedCarousel />
+      <HeroSection />
       {/* Categories Section */}
-      <section className="md:py-10 py-5 bg-gray-50">
-        <div className="container mx-auto ">
-          <CategoriesList endpoint="categories">
-            <HeadingPrimary
-              title="FEATURED CATEGORIES"
-              subtitle="Get your desired product from featured category"
-              className="mb-8"
-            />
-          </CategoriesList>
-        </div>
-      </section>
-
+      <CategoriesSection />
       {/* Best Selling Products Section */}
       <section className="md:py-10 py-5">
         <div className="container mx-auto ">

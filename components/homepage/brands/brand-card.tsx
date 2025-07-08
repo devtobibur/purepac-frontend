@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function BrandCard({ brand }: { brand: Brand }) {
   return (
-    <div className="relative group text-center transition-all duration-300 bg-white border border-gray-100 p-3 sm:p-4 flex flex-col justify-between items-center rounded-xl h-full shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-primary/20">
+    <div className="relative group text-center transition-all duration-700 bg-white border border-gray-100 p-3 sm:p-4 flex flex-col justify-between items-center h-full hover:border-primary/20">
       <Link
         href={`/brands/${brand.slug || brand.id}`}
         className="flex flex-col justify-between items-center w-full h-full"
@@ -36,9 +36,8 @@ export default function BrandCard({ brand }: { brand: Brand }) {
 
         {/* Product count */}
         <div className="flex items-center justify-center my-2 sm:my-3">
-          <p className="text-[10px] xs:text-xs text-gray-500 font-medium flex items-center gap-1">
-            <span className="inline-block w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-primary/50"></span>
-            {brand.products?.length || 0} products
+          <p className="text-base text-gray-500 font-medium flex items-center gap-1">
+            {brand.products?.length || 0} Products
           </p>
         </div>
       </Link>
